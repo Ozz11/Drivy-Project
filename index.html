@@ -1,28 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<title>ECMAScript 6 - Demos</title>
 </head>
+
 <body>
 	<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
 	<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 	<script type="module">
+		//Liens vers le tutoriel : https://www.wanadev.fr/21-introduction-a-ecmascript-6-le-javascript-de-demain/
 		//Notre code ES6 ici
-		function swap(x,y){
-			if(x != y){
+		function swap(x, y) {
+			if (x != y) {
 				var old = x;
 				let tmp = x;
 				x = y;
 				y = tmp;
 			}
-			console.log(typeof(x));		//number
-			console.log(typeof(y));		//undefined
+			console.log(typeof (x));		//number
+			console.log(typeof (y));		//undefined
 		}
 
 		let me = "Yannik";
 		let mAge = 29;
 		let result = `Je suis ${me} et j'ai ${age} ans`;
+
+		var add = function (x, y) {
+			var x = typeof (x) === "number" ? x : 0;
+			var y = typeof (y) === "number" ? y : 0;
+
+			return x + y;
+		}
+
+		let add = function (x = 0, y = 0) {
+			return x + y;
+		}
+
+		let languages = ["C", "C++", "C#", "JavaScript"];
+		for (let language of languages) {
+			console.log(language);
+		}
+
+		for (let [index, language] of languages.entries()) {
+			console.log(`Index: ${index} => Valeur: ${language}`);
+		}
+
+		let Engine = {
+			initialize() {
+				this.display("Init");
+			},
+			display(message) {
+				console.log(message);
+			}
+		}
+
+		let values = [65, 7, 78, 1, 32, 66];
+		values.sort((a, b) => { return b - a });
+
+		let Engine = {
+			initialize(element) {
+				element.addEventListener("keydown", (event) => {
+					this.display(event.type);
+				}, false);
+			},
+			display(message) {
+				console.log(message);
+			}
+		}
+
+		class Person {
+			constructor(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+			toString() {
+				return `Hi I'm ${this.name} and I'm ${this.age} years old!`;
+			}
+		}
+		let p = new Person("John", 18);
+		console.log(p.toString());
+
+		class Developer extends Person {
+			constructor(name, age, language) {
+				super(name, age);
+				this.language = language;
+			}
+			toString() {
+				return super.toString + `:: I'm a Developer who likes ${this.language}`;
+			}
+		}
+		let d = new Developer("Yannick", 29, "Javascript");
+		console.log(d.toString);
 	</script>
 </body>
+
 </html>
