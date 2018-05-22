@@ -1,0 +1,27 @@
+{
+  "name": "drivy-project",
+  "version": "1.0.0",
+  "description": "Projet de fin d'annee B3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ozz11/Drivy-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ozz11/Drivy-Project/issues"
+  },
+  "homepage": "https://github.com/Ozz11/Drivy-Project#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-register": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
