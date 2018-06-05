@@ -1,3 +1,5 @@
+USE d_vydri;
+
 DROP TABLE IF EXISTS t_utilisateur;
 CREATE TABLE t_utilisateur(
     id_user INT NOT NULL AUTO_INCREMENT,
@@ -14,13 +16,13 @@ CREATE TABLE t_utilisateur(
     lieuNaissance VARCHAR(30),
     presentation TEXT,
     resauxSociaux SET("Facebook","Twitter","Instagram"),
-    photo_user VARCHAR(255)
+    photo_user VARCHAR(255),
     CONSTRAINT pk_id_user PRIMARY KEY (id_user)
 )ENGINE = INNODB;
 
 DROP TABLE IF EXISTS t_vehicule;
 CREATE TABLE t_vehicule(
-    id_vehicule = INT NOT NULL AUTO_INCREMENT,
+    id_vehicule INT NOT NULL AUTO_INCREMENT,
     marque VARCHAR(30) NOT NULL,
     modele VARCHAR(30) NOT NULL,
     kilometrage INT NOT NULL,
